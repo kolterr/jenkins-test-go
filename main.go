@@ -1,13 +1,14 @@
 package main
 
-import (
-	"github.com/labstack/echo"
-)
+import "net/http"
 
 func main() {
-	e := echo.New()
-	e.GET("/", func(context echo.Context) error {
-		return context.JSON(200, "Hello world1!")
-	})
-	e.Start(":7777")
+
+	mux := http.NewServeMux()
+	mux.HandleFunc("/", hello)
+	http.ListenAndServe(":7071", mux)
+}
+
+func hello(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte(`Hello world!\n`))
 }
