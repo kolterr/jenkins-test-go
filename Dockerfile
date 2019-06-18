@@ -1,4 +1,4 @@
-FROM scratch
+FROM alpine
 MAINTAINER DJT
 ENV  WORKDIR /root/estimate
 RUN mkdir -p $WORKDIR/log \
