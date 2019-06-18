@@ -6,4 +6,5 @@ RUN mkdir -p $WORKDIR/log \
 WORKDIR $WORKDIR
 COPY . .
 EXPOSE 80
+RUN ls
 CMD ["/root/estimate/estimate-server"]
