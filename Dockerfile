@@ -7,4 +7,4 @@ WORKDIR $WORKDIR
 COPY . .
 EXPOSE 80
 RUN ls
-CMD ["/root/estimate/estimate-server"]
+CMD ["/estimate-server"]
